@@ -1,7 +1,7 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Wed Dec 24 2025 15:22:03 GMT+0000 (Coordinated Universal Time)|
+|**Generation Date and Time**<br>Wed Dec 31 2025 10:25:31 GMT+0000 (Coordinated Universal Time)|
 |**App Generator**<br>SAP Fiori Application Generator|
 |**App Generator Version**<br>1.20.0|
 |**Generation Platform**<br>SAP Business Application Studio|
@@ -9,8 +9,8 @@
 |**Service Type**<br>Local CAP|
 |**Service URL**<br>http://localhost:4004/odata/v4/bookstore/|
 |**Module Name**<br>bookstore-listview|
-|**Application Title**<br>Bookstore View|
-|**Namespace**<br>|
+|**Application Title**<br>Book Store|
+|**Namespace**<br>bookstore|
 |**UI5 Theme**<br>sap_horizon|
 |**UI5 Version**<br>1.143.2|
 |**Enable Code Assist Libraries**<br>False|

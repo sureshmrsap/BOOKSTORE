@@ -5,6 +5,11 @@ annotate service.Books with @(
         Data : [
             {
                 $Type : 'UI.DataField',
+                Label : 'Book Title',
+                Value : title,
+            },
+            {
+                $Type : 'UI.DataField',
                 Label : 'Genre',
                 Value : genre,
             },
@@ -22,6 +27,11 @@ annotate service.Books with @(
                 $Type : 'UI.DataField',
                 Label : 'Price',
                 Value : price,
+            },
+            {
+                $Type : 'UI.DataField',
+                Label : 'stock',
+                Value : stock,
             },
         ],
     },
@@ -72,95 +82,41 @@ annotate service.Books with @(
             Value : price,
         },
     ],
-    UI.SelectionPresentationVariant #table : {
-        $Type : 'UI.SelectionPresentationVariantType',
-        PresentationVariant : {
-            $Type : 'UI.PresentationVariantType',
-            Visualizations : [
-                '@UI.LineItem',
-            ],
-            GroupBy : [
-                title,
-            ],
-        },
-        SelectionVariant : {
-            $Type : 'UI.SelectionVariantType',
-            SelectOptions : [
-            ],
-        },
-    },
-    UI.SelectionPresentationVariant #table1 : {
-        $Type : 'UI.SelectionPresentationVariantType',
-        PresentationVariant : {
-            $Type : 'UI.PresentationVariantType',
-            Visualizations : [
-                '@UI.LineItem',
-            ],
-        },
-        SelectionVariant : {
-            $Type : 'UI.SelectionVariantType',
-            SelectOptions : [
-            ],
-        },
-    },
-    UI.SelectionPresentationVariant #table2 : {
-        $Type : 'UI.SelectionPresentationVariantType',
-        PresentationVariant : {
-            $Type : 'UI.PresentationVariantType',
-            Visualizations : [
-                '@UI.LineItem',
-            ],
-            GroupBy : [
-                title,
-            ],
-        },
-        SelectionVariant : {
-            $Type : 'UI.SelectionVariantType',
-            SelectOptions : [
-            ],
-        },
-    },
-    UI.SelectionPresentationVariant #table3 : {
-        $Type : 'UI.SelectionPresentationVariantType',
-        PresentationVariant : {
-            $Type : 'UI.PresentationVariantType',
-            Visualizations : [
-                '@UI.LineItem',
-            ],
-        },
-        SelectionVariant : {
-            $Type : 'UI.SelectionVariantType',
-            SelectOptions : [
-            ],
-        },
-    },
     UI.SelectionFields : [
-        price,
         pages,
+        stock,
     ],
+    UI.HeaderFacets : [
+        {
+            $Type : 'UI.ReferenceFacet',
+            ID : 'BookTitle',
+            Target : '@UI.FieldGroup#BookTitle',
+        },
+    ],
+    UI.FieldGroup #BookTitle : {
+        $Type : 'UI.FieldGroupType',
+        Data : [
+            {
+                $Type : 'UI.DataField',
+                Value : title,
+            },
+        ],
+    },
     UI.HeaderInfo : {
-        TypeName : 'Book',
         TypeNamePlural : 'Books',
+        TypeName : 'Book',
+        TypeImageUrl : 'sap-icon://course-book',
         Title : {
             $Type : 'UI.DataField',
             Value : title,
         },
-        Description : {
-            $Type : 'UI.DataField',
-            Value : genre,
-        },
-        TypeImageUrl : 'sap-icon://course-book',
     },
     UI.FieldGroup #EntryInformation : {
         $Type : 'UI.FieldGroupType',
         Data : [
             {
                 $Type : 'UI.DataField',
-                Value : modifiedAt,
-            },
-            {
-                $Type : 'UI.DataField',
-                Value : modifiedBy,
+                Value : createdAt,
             },
             {
                 $Type : 'UI.DataField',
@@ -168,7 +124,11 @@ annotate service.Books with @(
             },
             {
                 $Type : 'UI.DataField',
-                Value : createdAt,
+                Value : modifiedAt,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : modifiedBy,
             },
         ],
     },
@@ -193,34 +153,29 @@ annotate service.Books with {
 };
 
 annotate service.Books with {
-    price @Common.Label : 'Price'
+    pages @Common.Label : 'Pages'
 };
 
 annotate service.Books with {
-    pages @Common.Label : 'Pages'
+    stock @Common.Label : 'Stock'
 };
 
 annotate service.Chapters with @(
     UI.LineItem #Chapters : [
         {
             $Type : 'UI.DataField',
-            Value : book.Chapters.ID,
-            Label : 'ID',
+            Value : book.Chapters.title,
+            Label : 'Title',
         },
         {
             $Type : 'UI.DataField',
             Value : book.Chapters.pages,
-            Label : 'pages',
-        },
-        {
-            $Type : 'UI.DataField',
-            Value : book.Chapters.title,
-            Label : 'title',
+            Label : 'Pages',
         },
         {
             $Type : 'UI.DataField',
             Value : book.Chapters.numbers,
-            Label : 'numbers',
+            Label : 'Numbers',
         },
     ]
 );

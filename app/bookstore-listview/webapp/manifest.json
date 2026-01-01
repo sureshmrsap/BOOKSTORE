@@ -1,7 +1,7 @@
 {
   "_version": "1.76.0",
   "sap.app": {
-    "id": "bookstorelistview",
+    "id": "bookstore.bookstorelistview",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -13,7 +13,7 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:lrop",
       "version": "1.20.0",
-      "toolsId": "368d7333-6578-4538-860d-4ab0cd0d2814"
+      "toolsId": "fcdbd6da-1f3d-4030-85ad-26ae6b74c4ce"
     },
     "dataSources": {
       "mainService": {
@@ -60,7 +60,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "bookstorelistview.i18n.i18n"
+          "bundleName": "bookstore.bookstorelistview.i18n.i18n"
         }
       },
       "": {
@@ -102,6 +102,7 @@
           "options": {
             "settings": {
               "contextPath": "/Books",
+              "variantManagement": "Page",
               "navigation": {
                 "Books": {
                   "detail": {
@@ -116,8 +117,7 @@
                   }
                 }
               },
-              "variantManagement": "Page",
-              "defaultTemplateAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#table3"
+              "initialLoad": "Enabled"
             }
           }
         },
@@ -128,7 +128,8 @@
           "options": {
             "settings": {
               "editableHeaderContent": false,
-              "contextPath": "/Books"
+              "contextPath": "/Books",
+              "sectionLayout": "Page"
             }
           }
         }
